@@ -1,22 +1,23 @@
 //Алгоритм выбора - сортировка выбором
-let array = [6, 8, 34, 11, 12, 4, 7, 8, 14, 155, 18, 32, -1, 22, 155, -2, -5, 11, 134, 123, 133, 122, 111, 222, 333]
+const arr = [0,3,2,5,6,8,1,9,4,2,1,2,9,6,4,1,7,-1, -5, 23,6,2,35,6,3,32] // [0,1,1,2,3.......]
 let count = 0
 
-function selectionSort(arr) {
-    for (let i = 0; i <= arr.length; i++) {
+function selectionSort(array) {
+    for (let i = 0; i < array.length; i++) {
         let indexMin = i
-        for (let j = i+1; j <= arr.length; j++) {
-            if (arr[j] < arr[indexMin]) {
+        for (let j = i+1; j < array.length; j++) {
+            if (array[j] < array[indexMin]) {
                 indexMin = j
             }
             count += 1
         }
-        let tmp = arr[i]
-        arr[i] = arr[indexMin]
-        arr[indexMin] = tmp
+        let tmp = array[i]
+        array[i] = array[indexMin]
+        array[indexMin] = tmp
     }
-    return arr
+    return array
 }
 
-console.log(selectionSort(array)) // скорость O(n*n)
-console.log(count)
+console.log(selectionSort(arr))
+console.log(arr.length) // O(n*n)
+console.log('count = ', count)
